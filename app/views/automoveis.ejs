@@ -1,0 +1,145 @@
+<% include header.html %>
+<hr>
+<div class="row">
+	<div class="col">
+		<button type="button" class="btn btn-outline-success btn-sm" data-toggle="modal" data-target="#cadastrar-automovel">
+			Cadastrar Automóvel
+		</button>
+		<div id="cadastrar-automovel" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="ModalCadastrarAutomovel" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header bg-secondary">
+						<h2 class="modal-title" id="cadastrarAutomovelLabel">Novo Automóvel</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<form action="/automoveis" method="post">
+							<div class="form-row">
+								<div class="form-group col-md-5">
+									<label for="Modelo" class="col-form-label">Modelo:</label>
+									<input type="text" name="Modelo" id="Modelo" class="form-control form-control-sm" maxlength="30" placeholder="Ex. Brasília." required aria-describedby="modeloHelp">
+									<small id="modeloHelp" class="form-text text-muted"></small>
+								</div>
+								<div class="form-group col-md-2">
+									<label for="Ano" class="col-form-label">Ano:</label>
+									<input type="text" name="Ano" id="Ano" class="form-control form-control-sm" maxlength="15" required aria-describedby="anoHelp">
+									<small id="anoHelp" class="form-text text-muted">Apenas números</small>
+								</div>
+								<div class="form-group col-md-5">
+									<label for="CodMontadora">Montadora:</label>
+									<select name="CodMontadora" id="CodMontadora" class="form-control form-control-sm" required aria-describedby="montadoraHelp">
+										<option value=""></option>
+										<% listaMontadora.forEach(function(montadora) { %>
+										<option value="<%= montadora.CodMontadora %>"><%= montadora.Montadora %></option>
+										<% }); %>
+									</select>
+									<small id="montadoraHelp" class="form-text text-muted">Selecione a montadora.</small>
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-group col-md-6">
+									<label for="Categoria">Categoria:</label>
+									<select name="Categoria" id="Categoria" class="form-control form-control-sm" required aria-describedby="categoriaHelp">
+										<option value=""></option>
+										<option value="Passeio Compacto">Passeio Compacto</option>
+										<option value="Passeio Sedam">Passeio Sedam</option>
+										<option value="Pick Up">Pick Up</option>
+										<option value="Utilitário">Utilitário</option>
+										<option value="Caminhonete">Caminhonete</option>
+										<option value="Esportivo">Esportivo</option>
+										<option value="SUV">SUV</option>
+									</select>
+									<small id="categoriaHelp" class="form-text text-muted">Selecione a categoria.</small>
+								</div>
+								<div class="form-group col-md-4">
+									<label for="TipoCombustivel">Tipo de Combustível:</label>
+									<select name="TipoCombustivel" id="TipoCombustivel" class="form-control form-control-sm" required aria-describedby="tipoCombustivelHelp">
+										<option value=""></option>
+										<option value="Etanol">Etanol</option>
+										<option value="Gasolina">Gasolina</option>
+										<option value="Etanol/Gasolina">Etanol/Gasolina</option>
+										<option value="Diesel">Diesel</option>
+										<option value="Gás Natural">Gás Natural</option>
+										<option value="Energia Elétrica">Energia Elétrica</option>
+									</select>
+									<small id="tipoCombustivelHelp" class="form-text text-muted">Selecionne o combustível.</small>
+								</div>
+								<div class="form-group col-md-2">
+									<label for="Motor">Motor:</label>
+									<select name="Motor" id="Motor" class="form-control form-control-sm" required aria-describedby="motorHelp">
+										<option value=""></option>
+										<option value="1.0">1.0</option>
+										<option value="1.4">1.4</option>
+										<option value="1.5">1.5</option>
+										<option value="1.6">1.6</option>
+										<option value="1.8">1.8</option>
+										<option value="2.0">2.0</option>
+									</select>
+									<small id="motorHelp" class="form-text text-muted">Selecione o motor.</small>
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-group col-md-3">
+									<label for="Quantidade" class="col-form-label">Quantidade:</label>
+									<input type="number" name="Quantidade" id="Quantidade" class="form-control form-control-sm" step="1" placeholder="Ex. 1" required aria-describedby="quantidadeHelp">
+									<small id="quantidadeHelp" class="form-text text-muted">Disponível para venda.</small>
+								</div>
+								<div class="form-group col-md-5">
+									<label for="Preco" class="col-form-label">Preço:</label>
+									<input type="number" name="Preco" id="Preco" class="form-control form-control-sm" step="0.01" placeholder="Ex. 36900.99" required aria-describedby="precoHelp">
+									<small id="precoHelp" class="form-text text-muted">Aceita casas decimais.</small>
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="col">
+									<button type="submit" class="btn btn-success">Cadastrar</button>
+									<button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancelar</button>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<p>Todos os campos são obrigatórios.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col">
+		<table class="table table-responsive table-sm">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Modelo</th>
+					<th scope="col">Montadora</th>
+					<th scope="col">Ano</th>
+					<th scope="col">Categoria</th>
+					<th scope="col">Tipo de Combustível</th>
+					<th scope="col">Motor</th>
+					<th scope="col">Quantidade</th>
+					<th scope="col">Preço</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% lista.forEach(function(automovel) { %>
+				<tr>
+					<th scope="row"><%= automovel.CodAutomovel %></th>
+					<td><%= automovel.Modelo %></td>
+					<td><%= automovel.Montadora %></td>
+					<td><%= automovel.Ano %></td>
+					<td><%= automovel.Categoria %></td>
+					<td><%= automovel.TipoCombustivel %></td>
+					<td><%= automovel.Motor %></td>
+					<td><%= automovel.Quantidade %></td>
+					<td><%= automovel.Preco %></td>
+				</tr>
+				<% }); %>
+			</tbody>
+		</table>
+	</div>
+</div>
+<% include footer.html %>

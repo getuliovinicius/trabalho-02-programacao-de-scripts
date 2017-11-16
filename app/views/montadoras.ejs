@@ -2,10 +2,10 @@
 <hr>
 <div class="row">
 	<div class="col">
-		<button type="button" class="btn btn-outline-success btn-sm" data-toggle="modal" data-target="#cadatrar-montadora">
+		<button type="button" class="btn btn-outline-success btn-sm" data-toggle="modal" data-target="#cadastrar-montadora">
 			Cadastrar Montadora
 		</button>
-		<div id="cadatrar-montadora" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="ModalCadastrarMontadora" aria-hidden="true">
+		<div id="cadastrar-montadora" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="ModalCadastrarMontadora" aria-hidden="true">
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content">
 					<div class="modal-header bg-secondary">
@@ -16,13 +16,13 @@
 					</div>
 					<div class="modal-body">
 						<form action="/montadoras" method="post">
-							<div class="form-group">
-								<label for="Montadora" class="col-form-label">Montadora:</label>
-								<input type="text" name="Montadora" id="Montadora" class="form-control form-control-sm" maxlength="100" required aria-describedby="montadoraHelp">
-								<small id="montadoraHelp" class="form-text text-muted">Ex. Chevrolet.</small>
-							</div>
 							<div class="form-row">
-								<div class="form-group col-md-9">
+								<div class="form-group col-md-4">
+									<label for="Montadora" class="col-form-label">Montadora:</label>
+									<input type="text" name="Montadora" id="Montadora" class="form-control form-control-sm" maxlength="100" required aria-describedby="montadoraHelp">
+									<small id="montadoraHelp" class="form-text text-muted">Ex. Chevrolet.</small>
+								</div>
+								<div class="form-group col-md-5">
 									<label for="Email" class="col-form-label">E-mail:</label>
 									<input type="email" name="Email" id="Email" class="form-control form-control-sm" maxlength="60" placeholder="Ex. usuario@dominio.com" required>
 								</div>
