@@ -9,6 +9,7 @@ Este é um repositório para a avaliação do "Trabalho-02" da Disciplina de **P
 + NodeJS
 + Git
 + Bower
++ MySQL Server
 
 ```
 $ npm install bower -g
@@ -23,6 +24,23 @@ $ git clone https://github.com/getuliovinicius/trabalho-02-programacao-de-script
 $ cd programacao-de-scripts
 $ npm install
 $ bower install
+```
+
+Na sequencia, execute o arquivo `tabelas-do-banco.sql` em um terminal, ou se preferir, copie o código e execute em um cliente do MySQL.
+
+Por fim, altere os dados da conexão no arquivo `app/models/Database.js` para os dados de sua conexão.
+
+```js
+function createDBConnection() {
+	return mysql.createConnection(
+        {
+            host: 'localhost',
+            user: 'gerente_app',
+            password: 'G3r3nt3_4pp',
+            database: 'psTrabalho02'
+        }
+    );
+};
 ```
 
 **Comando para executar a aplicação**
