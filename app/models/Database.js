@@ -1,4 +1,4 @@
-// config/database.js
+// config/Database.js
 
 var mysql = require('mysql');
 
@@ -8,7 +8,7 @@ function createDBConnection() {
             host: 'localhost',
             user: 'gerente_app',
             password: 'G3r3nt3_4pp',
-            database: 'cursoNode1'
+            database: 'psTrabalho02'
         }
     );
 };

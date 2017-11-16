@@ -1,0 +1,27 @@
+{
+  "name": "trabalho-02-programacao-de-scripts.local",
+  "description": "Este é um repositório para a avaliação do \"Trabalho-02\" da Disciplina de **Programação de Scripts**.",
+  "main": "server.js",
+  "authors": [
+    "Getúlio Vinícius <getuliovinits@gmail.com>"
+  ],
+  "license": "GPL-3.0",
+  "keywords": [
+    "automóveis",
+    "montadoras",
+    "nodejs",
+    "mysql"
+  ],
+  "homepage": "https://github.com/getuliovinicius/trabalho-02-programacao-de-scripts",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "v4.0.0-beta"
+  }
+}

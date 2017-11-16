@@ -1,0 +1,35 @@
+{
+  "name": "trabalho-02-programacao-de-scripts.local",
+  "version": "1.0.0",
+  "description": "Este é um repositório para a avaliação do \"Trabalho-02\" da Disciplina de **Programação de Scripts** do 5º Semestre do curso de Analise e Desenvolvimento de Sistemas da Fatec de Franca.",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "express-load": "^1.1.16",
+    "method-override": "^2.3.10",
+    "mysql": "^2.15.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/getuliovinicius/trabalho-02-programacao-de-scripts.git"
+  },
+  "keywords": [
+    "automóveis",
+    "montadoras",
+    "nodejs",
+    "mysql"
+  ],
+  "author": "Getúlio Vinícius <getuliovinits@gmail.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/getuliovinicius/trabalho-02-programacao-de-scripts/issues"
+  },
+  "homepage": "https://github.com/getuliovinicius/trabalho-02-programacao-de-scripts#readme"
+}

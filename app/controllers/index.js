@@ -5,7 +5,11 @@ module.exports = function(app) {
     var controller = {};
 
     controller.index = function(req, res) {
-        res.render('index', {nome: 'Automóveis'});
+        res.render('index', {
+            tituloSite: 'Consecionária NodeJS',
+            tituloPagina: 'Consecionária NodeJS',
+            tituloConteudo: 'Bem vindo!'
+        });
     };
     
     return controller;

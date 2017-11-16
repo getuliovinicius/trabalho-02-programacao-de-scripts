@@ -41,7 +41,11 @@ module.exports = function() {
      * se nenhum rota atender, direciona para página 404
      */
     app.get('*', function(req, res) {
-        res.status(404).render('404');
+        res.status(404).render('404', {
+            tituloSite: 'Consecionária NodeJS',
+            tituloPagina: 'Página não encontrada! | Consecionária NodeJS',
+            tituloConteudo: 'Página não encontrada!'
+        });
     });
 
     return app;

@@ -1,0 +1,101 @@
+<% include header.html %>
+<hr>
+<div class="row">
+	<div class="col">
+		<button type="button" class="btn btn-outline-success btn-sm" data-toggle="modal" data-target="#cadatrar-montadora">
+			Cadastrar Montadora
+		</button>
+		<div id="cadatrar-montadora" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="ModalCadastrarMontadora" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header bg-secondary">
+						<h2 class="modal-title" id="cadastrarMontadoraLabel">Nova Montadora</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<form action="/montadoras" method="post">
+							<div class="form-group">
+								<label for="Montadora" class="col-form-label">Montadora:</label>
+								<input type="text" name="Montadora" id="Montadora" class="form-control form-control-sm" maxlength="100" required aria-describedby="montadoraHelp">
+								<small id="montadoraHelp" class="form-text text-muted">Ex. Chevrolet.</small>
+							</div>
+							<div class="form-row">
+								<div class="form-group col-md-9">
+									<label for="Email" class="col-form-label">E-mail:</label>
+									<input type="email" name="Email" id="Email" class="form-control form-control-sm" maxlength="60" placeholder="Ex. usuario@dominio.com" required>
+								</div>
+								<div class="form-group col-md-3">
+									<label for="Telefone" class="col-form-label">Telefone:</label>
+									<input type="tel" name="Telefone" id="Telefone" class="form-control form-control-sm" maxlength="15" placeholder="99-9999-9999" required>
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-group col-md-5">
+									<label for="Cidade" class="col-form-label">Cidade:</label>
+									<input type="text" name="Cidade" id="Cidade" class="form-control form-control-sm" maxlength="30" placeholder="Ex. São Paulo" required>
+								</div>
+								<div class="form-group col-md-3">
+									<label for="Estado" class="col-form-label">Provincia/Estado:</label>
+									<input type="text" name="Estado" id="Estado" class="form-control form-control-sm" maxlength="20" placeholder="Ex. SP - São Paulo" required>
+								</div>
+								<div class="form-group col-md-4">
+									<label for="Pais" class="col-form-label">País:</label>
+									<input type="text" name="Pais" id="Pais" class="form-control form-control-sm" maxlength="30" placeholder="Ex. Brasil" required>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="Representante" class="col-form-label">Representante:</label>
+								<input type="text" name="Representante" id="Representante" class="form-control form-control-sm" maxlength="60" required aria-describedby="representanteHelp">
+								<small id="representanteHelp" class="form-text text-muted">Nome completo do representante.</small>
+							</div>
+							<div class="form-row">
+								<div class="col">
+									<button type="submit" class="btn btn-success">Cadastrar</button>
+									<button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancelar</button>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<p>Todos os campos são obrigatórios.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col">
+		<table class="table table-responsive table-sm">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Montadora</th>
+					<th scope="col">Email</th>
+					<th scope="col">Telefone</th>
+					<th scope="col">Cidade</th>
+					<th scope="col">Estado</th>
+					<th scope="col">País</th>
+					<th scope="col">Representante</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% lista.forEach(function(montadora) { %>
+				<tr>
+					<th scope="row"><%= montadora.CodMontadora %></th>
+					<td><%= montadora.Montadora %></td>
+					<td><%= montadora.Email %></td>
+					<td><%= montadora.Telefone %></td>
+					<td><%= montadora.Cidade %></td>
+					<td><%= montadora.Estado %></td>
+					<td><%= montadora.Pais %></td>
+					<td><%= montadora.Representante %></td>
+				</tr>
+				<% }); %>
+			</tbody>
+		</table>
+	</div>
+</div>
+<% include footer.html %>
