@@ -1,0 +1,46 @@
+## REQUISITOS
+
++ [Requisitos do Trabalho](documentacao/mds/Avaliação 3 - Implentação listatimes.pdf)
++ NodeJS
++ npm
++ Git
++ Bower
++ MySQL Server
+
+```
+$ npm install bower -g
+```
+
+## PASSO A PASSO
+
+Abra o terminal e navegue até a pasta `trabalho-02_getulio-vinicius`.
+
+No terminal execute os dois comandos abaixo. Sem o "$".
+
+```
+$ npm install
+$ bower install
+```
+
+Na sequencia, execute o arquivo `tabelas-do-banco.sql` em um terminal, ou se preferir, copie o código e execute em um cliente do MySQL.
+
+Por fim, altere os dados da conexão no arquivo `app/models/Database.js` para os dados de sua conexão.
+
+```js
+function createDBConnection() {
+	return mysql.createConnection(
+        {
+            host: '',
+            user: '',
+            password: '',
+            database: ''
+        }
+    );
+};
+```
+
+Comando para executar a aplicação. Sem o "$".
+
+```
+$ node server.js
+```

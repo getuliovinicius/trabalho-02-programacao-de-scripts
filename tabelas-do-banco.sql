@@ -8,11 +8,11 @@
 
 CREATE TABLE Montadora (
 	CodMontadora INT NOT NULL AUTO_INCREMENT,
-	Montadora VARCHAR(100) UNIQUE,
+	Montadora VARCHAR(30) UNIQUE,
 	Email CHAR(60),
 	Telefone CHAR(15),
 	Cidade VARCHAR(30),
-	Estado CHAR(20),
+	Estado CHAR(2),
 	Pais CHAR(30),
 	Representante VARCHAR(100),
 	PRIMARY KEY (CodMontadora)

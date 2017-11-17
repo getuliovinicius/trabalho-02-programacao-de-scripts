@@ -1,3 +1,21 @@
+/* Show it is fixed to the top */
+body {
+	padding-top: 4.5rem;
+	background-color: #e2e8f0;
+}
+
+main {
+	min-height: 100vh;
+	padding: 20px 0 50px;
+	box-sizing: border-box;
+}
+
+footer {
+	background-color: #350202;
+	padding: 20px;
+	color: white;
+}
+
 table {
     margin-top: 20px !important;
 }

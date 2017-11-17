@@ -2,7 +2,7 @@
 <hr>
 <div class="row">
 	<div class="col">
-		<button type="button" class="btn btn-outline-success btn-sm" data-toggle="modal" data-target="#cadastrar-automovel">
+		<button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#cadastrar-automovel">
 			Cadastrar Automóvel
 		</button>
 		<div id="cadastrar-automovel" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="ModalCadastrarAutomovel" aria-hidden="true">
@@ -16,19 +16,23 @@
 					</div>
 					<div class="modal-body">
 						<form action="/automoveis" method="post">
-							<div class="form-row">
-								<div class="form-group col-md-5">
-									<label for="Modelo" class="col-form-label">Modelo:</label>
+							<div class="form-group row">
+								<label for="Modelo" class="col-md-4 col-form-label text-right">Modelo:</label>
+								<div class="col-md-5">
 									<input type="text" name="Modelo" id="Modelo" class="form-control form-control-sm" maxlength="30" placeholder="Ex. Brasília." required aria-describedby="modeloHelp">
 									<small id="modeloHelp" class="form-text text-muted"></small>
 								</div>
-								<div class="form-group col-md-2">
-									<label for="Ano" class="col-form-label">Ano:</label>
+							</div>
+							<div class="form-group row">
+								<label for="Ano" class="col-md-4 col-form-label text-right">Ano:</label>
+								<div class="form-group col-md-3">
 									<input type="text" name="Ano" id="Ano" class="form-control form-control-sm" maxlength="15" required aria-describedby="anoHelp">
 									<small id="anoHelp" class="form-text text-muted">Apenas números</small>
 								</div>
+							</div>
+							<div class="form-group row">
+								<label for="CodMontadora" class="col-md-4 col-form-label text-right">Montadora:</label>
 								<div class="form-group col-md-5">
-									<label for="CodMontadora">Montadora:</label>
 									<select name="CodMontadora" id="CodMontadora" class="form-control form-control-sm" required aria-describedby="montadoraHelp">
 										<option value=""></option>
 										<% listaMontadora.forEach(function(montadora) { %>
@@ -38,9 +42,9 @@
 									<small id="montadoraHelp" class="form-text text-muted">Selecione a montadora.</small>
 								</div>
 							</div>
-							<div class="form-row">
-								<div class="form-group col-md-6">
-									<label for="Categoria">Categoria:</label>
+							<div class="form-group row">
+								<label for="Categoria" class="col-md-4 col-form-label text-right">Categoria:</label>
+								<div class="form-group col-md-4">
 									<select name="Categoria" id="Categoria" class="form-control form-control-sm" required aria-describedby="categoriaHelp">
 										<option value=""></option>
 										<option value="Passeio Compacto">Passeio Compacto</option>
@@ -53,8 +57,10 @@
 									</select>
 									<small id="categoriaHelp" class="form-text text-muted">Selecione a categoria.</small>
 								</div>
+							</div>
+							<div class="form-group row">
+								<label for="TipoCombustivel" class="col-md-4 col-form-label text-right">Combustível:</label>
 								<div class="form-group col-md-4">
-									<label for="TipoCombustivel">Tipo de Combustível:</label>
 									<select name="TipoCombustivel" id="TipoCombustivel" class="form-control form-control-sm" required aria-describedby="tipoCombustivelHelp">
 										<option value=""></option>
 										<option value="Etanol">Etanol</option>
@@ -66,8 +72,10 @@
 									</select>
 									<small id="tipoCombustivelHelp" class="form-text text-muted">Selecionne o combustível.</small>
 								</div>
-								<div class="form-group col-md-2">
-									<label for="Motor">Motor:</label>
+							</div>
+							<div class="form-group row">
+								<label for="Motor" class="col-md-4 col-form-label text-right">Motor:</label>
+								<div class="form-group col-md-3">
 									<select name="Motor" id="Motor" class="form-control form-control-sm" required aria-describedby="motorHelp">
 										<option value=""></option>
 										<option value="1.0">1.0</option>
@@ -80,22 +88,26 @@
 									<small id="motorHelp" class="form-text text-muted">Selecione o motor.</small>
 								</div>
 							</div>
-							<div class="form-row">
+							<div class="form-group row">
+								<label for="Quantidade" class="col-md-4 col-form-label text-right">Quantidade:</label>
 								<div class="form-group col-md-3">
-									<label for="Quantidade" class="col-form-label">Quantidade:</label>
 									<input type="number" name="Quantidade" id="Quantidade" class="form-control form-control-sm" step="1" placeholder="Ex. 1" required aria-describedby="quantidadeHelp">
 									<small id="quantidadeHelp" class="form-text text-muted">Disponível para venda.</small>
 								</div>
-								<div class="form-group col-md-5">
-									<label for="Preco" class="col-form-label">Preço:</label>
+							</div>
+							<div class="form-group row">
+								<label for="Preco" class="col-md-4 col-form-label text-right">Preço:</label>
+								<div class="form-group col-md-3">
 									<input type="number" name="Preco" id="Preco" class="form-control form-control-sm" step="0.01" placeholder="Ex. 36900.99" required aria-describedby="precoHelp">
 									<small id="precoHelp" class="form-text text-muted">Aceita casas decimais.</small>
 								</div>
 							</div>
-							<div class="form-row">
+							<div class="form-group row">
+								<div class="col-4">
+								</div>
 								<div class="col">
-									<button type="submit" class="btn btn-success">Cadastrar</button>
-									<button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancelar</button>
+									<button type="submit" class="btn btn-primary">Cadastrar</button>
+									<button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancelar</button>										
 								</div>
 							</div>
 						</form>
@@ -135,7 +147,7 @@
 					<td><%= automovel.TipoCombustivel %></td>
 					<td><%= automovel.Motor %></td>
 					<td><%= automovel.Quantidade %></td>
-					<td><%= automovel.Preco %></td>
+					<td>R$ <%= automovel.Preco %></td>
 				</tr>
 				<% }); %>
 			</tbody>

@@ -2,7 +2,7 @@
 <hr>
 <div class="row">
 	<div class="col">
-		<button type="button" class="btn btn-outline-success btn-sm" data-toggle="modal" data-target="#cadastrar-montadora">
+		<button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#cadastrar-montadora">
 			Cadastrar Montadora
 		</button>
 		<div id="cadastrar-montadora" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="ModalCadastrarMontadora" aria-hidden="true">
@@ -16,44 +16,86 @@
 					</div>
 					<div class="modal-body">
 						<form action="/montadoras" method="post">
-							<div class="form-row">
-								<div class="form-group col-md-4">
-									<label for="Montadora" class="col-form-label">Montadora:</label>
-									<input type="text" name="Montadora" id="Montadora" class="form-control form-control-sm" maxlength="100" required aria-describedby="montadoraHelp">
-									<small id="montadoraHelp" class="form-text text-muted">Ex. Chevrolet.</small>
-								</div>
+							<div class="form-group row">
+								<label for="Montadora" class="col-md-4 col-form-label text-right">Montadora:</label>
 								<div class="form-group col-md-5">
-									<label for="Email" class="col-form-label">E-mail:</label>
+									<input type="text" name="Montadora" id="Montadora" class="form-control form-control-sm" maxlength="100" required aria-describedby="montadoraHelp">
+									<small id="montadoraHelp" class="form-text text-muted">Ex. Montadora.</small>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="Email" class="col-md-4 col-form-label text-right">E-mail:</label>
+								<div class="form-group col-md-5">
 									<input type="email" name="Email" id="Email" class="form-control form-control-sm" maxlength="60" placeholder="Ex. usuario@dominio.com" required>
 								</div>
+							</div>
+							<div class="form-group row">
+								<label for="Telefone" class="col-md-4 col-form-label text-right">Telefone:</label>
 								<div class="form-group col-md-3">
-									<label for="Telefone" class="col-form-label">Telefone:</label>
 									<input type="tel" name="Telefone" id="Telefone" class="form-control form-control-sm" maxlength="15" placeholder="99-9999-9999" required>
 								</div>
 							</div>
-							<div class="form-row">
+							<div class="form-group row">
+								<label for="Cidade" class="col-md-4 col-form-label text-right">Cidade:</label>
 								<div class="form-group col-md-5">
-									<label for="Cidade" class="col-form-label">Cidade:</label>
 									<input type="text" name="Cidade" id="Cidade" class="form-control form-control-sm" maxlength="30" placeholder="Ex. São Paulo" required>
 								</div>
+							</div>
+							<div class="form-group row">
+								<label for="Estado" class="col-md-4 col-form-label text-right">Estado:</label>
 								<div class="form-group col-md-3">
-									<label for="Estado" class="col-form-label">Provincia/Estado:</label>
-									<input type="text" name="Estado" id="Estado" class="form-control form-control-sm" maxlength="20" placeholder="Ex. SP - São Paulo" required>
+									<select name="Estado" id="Estado" class="form-control form-control-sm" required aria-describedby="estadoHelp">
+										<option value=""></option>
+										<option value="AC">Acre</option>
+										<option value="AL">Alagoas</option>
+										<option value="AP">Amapá</option>
+										<option value="AM">Amazonas</option>
+										<option value="BA">Bahia</option>
+										<option value="CE">Ceará</option>
+										<option value="DF">Distrito Federal</option>
+										<option value="ES">Espírito Santo</option>
+										<option value="GO">Goiás</option>
+										<option value="MA">Maranhão</option>
+										<option value="MT">Mato Grosso</option>
+										<option value="MS">Mato Grosso do Sul</option>
+										<option value="MG">Minas Gerais</option>
+										<option value="PA">Pará</option>
+										<option value="PB">Paraíba</option>
+										<option value="PR">Paraná</option>
+										<option value="PE">Pernambuco</option>
+										<option value="PI">Piauí</option>
+										<option value="RJ">Rio de Janeiro</option>
+										<option value="RN">Rio Grande do Norte</option>
+										<option value="RS">Rio Grande do Sul</option>
+										<option value="RO">Rondônia</option>
+										<option value="RR">Roraima</option>
+										<option value="SC">Santa Catarina</option>
+										<option value="SP">São Paulo</option>
+										<option value="SE">Sergipe</option>
+										<option value="TO">Tocantins</option>
+									</select>
+									<small id="estadoHelp" class="form-text text-muted">Selecione o estado.</small>
 								</div>
+							</div>
+							<div class="form-group row">
+								<label for="Pais" class="col-md-4 col-form-label text-right">País de Origem:</label>
 								<div class="form-group col-md-4">
-									<label for="Pais" class="col-form-label">País:</label>
 									<input type="text" name="Pais" id="Pais" class="form-control form-control-sm" maxlength="30" placeholder="Ex. Brasil" required>
 								</div>
 							</div>
-							<div class="form-group">
-								<label for="Representante" class="col-form-label">Representante:</label>
-								<input type="text" name="Representante" id="Representante" class="form-control form-control-sm" maxlength="60" required aria-describedby="representanteHelp">
-								<small id="representanteHelp" class="form-text text-muted">Nome completo do representante.</small>
+							<div class="form-group row">
+								<label for="Representante" class="col-md-4 col-form-label text-right">Representante:</label>
+								<div class="form-group col-md-5">
+									<input type="text" name="Representante" id="Representante" class="form-control form-control-sm" maxlength="60" required aria-describedby="representanteHelp">
+									<small id="representanteHelp" class="form-text text-muted">Nome completo do representante.</small>
+								</div>
 							</div>
-							<div class="form-row">
+							<div class="form-group row">
+								<div class="col-4">
+								</div>
 								<div class="col">
-									<button type="submit" class="btn btn-success">Cadastrar</button>
-									<button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancelar</button>
+									<button type="submit" class="btn btn-primary">Cadastrar</button>
+									<button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancelar</button>								
 								</div>
 							</div>
 						</form>
